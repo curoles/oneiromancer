@@ -1,0 +1,23 @@
+{
+  "name": "oneiromancer",
+  "version": "1.0.0",
+  "description": "Dream Teller",
+  "main": "server/js/index.js",
+  "scripts": {
+    "start": "node server/js/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/curoles/oneiromancer.git"
+  },
+  "author": "Igor Lesik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/curoles/oneiromancer/issues"
+  },
+  "homepage": "https://github.com/curoles/oneiromancer#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

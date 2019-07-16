@@ -1,0 +1,2 @@
+table(home).
+table(family).

@@ -21,4 +21,5 @@ anger(friend, profit).
 beaty(something, fulfillment_of_secret_desires).
 beaty(landscape, fulfillment_of_secret_desires).
 beaty(view,      fulfillment_of_secret_desires).
+beaty(view,      happiness).
 beaty(painting,  fulfillment_of_secret_desires).

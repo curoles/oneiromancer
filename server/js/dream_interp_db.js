@@ -1,5 +1,5 @@
 const DB_FILE = './build/dreams_interp.sqlite'
-console.log(`Create SQLITE DB: ${DB_FILE}`)
+console.log(`Open SQLITE DB: ${DB_FILE}`)
 
 var sqlite3 = require('sqlite3').verbose();
 

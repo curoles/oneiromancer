@@ -1,10 +1,4 @@
-const facts = [
-  ['air', ['clear'], 'end_of_troubles', ''],
-  ['air', ['dusty'], 'losses', ''],
-  ['air', ['dusty'], 'sickness', ''],
-  ['air', ['dusty'], 'grief', ''],
-  ['fog', [],        'uncertainty', '']
-];
+const facts = require('./dream_interp_data.js')
 
 const DB_FILE = './build/dreams_interp.sqlite'
 console.log(`Create SQLITE DB: ${DB_FILE}`)

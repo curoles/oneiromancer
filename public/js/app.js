@@ -5,7 +5,11 @@ if ("serviceWorker" in navigator) {
 var app = angular.module('OneiroApp', []);
 
 app.controller('OneiroCtrl', function($scope, $http) {
-  $http.get("/api/atoms")
+  /*$http.get("/api/atoms")
+  .then(function(response) {
+    $scope.oneiroAtoms = response.data;
+  });*/
+  $http.get("/api/find_atoms/" + 'air')
   .then(function(response) {
     $scope.oneiroAtoms = response.data;
   });

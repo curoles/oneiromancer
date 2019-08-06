@@ -35,7 +35,7 @@ app.get("/api/atoms", (req, res, next) => {
 //https://developerhowto.com/2018/12/29/build-a-rest-api-with-node-js-and-express-js/
 
 app.get("/api/atoms/:name", (req, res, next) => {
-    var sql = "select * from TAtom where name = ?"
+    var sql = "SELECT * FROM TAtom WHERE name = ?"
     var params = [req.params.name]
     dream_db.get(sql, params, (err, row) => {
         if (err) {
@@ -45,6 +45,21 @@ app.get("/api/atoms/:name", (req, res, next) => {
         res.json({
             "message":"success",
             "data":row
+        })
+      });
+});
+
+app.get("/api/find_atoms/:name", (req, res, next) => {
+    const sql = "SELECT * FROM TAtom WHERE name LIKE ?";
+    var params = [req.params.name + '%']
+    dream_db.all(sql, params, (err, rows) => {
+        if (err) {
+          res.status(400).json({"error":err.message});
+          return;
+        }
+        res.json({
+            "message":"success",
+            "data":rows, "key":req.params.name
         })
       });
 });

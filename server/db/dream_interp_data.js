@@ -3,7 +3,8 @@ const facts = [
   ['air', ['dusty'], 'losses', ''],
   ['air', ['dusty'], 'sickness', ''],
   ['air', ['dusty'], 'grief', ''],
-  ['fog', [],        'uncertainty', '']
+  ['fog', [],        'uncertainty', ''],
+  ['xxx', [],        'yyy', '']
 ];
 
 module.exports = facts

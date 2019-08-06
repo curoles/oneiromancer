@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 // Define routes
-app.use(express.static("client"));
+app.use(express.static("public"));
 
 // Default response for any other request
 //app.use(function(req, res){

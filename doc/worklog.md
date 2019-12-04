@@ -1,3 +1,40 @@
+2019-11-03 looking at simple chat app with socket.io <https://socket.io/get-started/chat>
+=========================================================================================
+
+```terminal
+npm install socket.io
+```
+
+Socket.IO is composed of two parts:
+
+ 1. A server that integrates with (or mounts on) the Node.JS HTTP Server: socket.io
+ 2. A client library that loads on the browser side: socket.io-client
+
+2019-11-03 how to start the server
+==================================
+
+To start the server:
+
+```terminal
+$ npm start
+```
+
+The `start` command is defined in package.json file:
+
+```terminal
+$ grep start package.json
+    "start": "node server/js/index.js",
+```
+
+2019-11-03 articles
+===================
+
+- [In your wildest dreams: the language and psychological features of
+dreams](https://www.aclweb.org/anthology/W17-3102.pdf])
+- [The interpretation of dream meaning: Resolving ambiguity using Latent Semantic Analysis in a small corpus of text](https://www.researchgate.net/publication/319986418_The_interpretation_of_dream_meaning_Resolving_ambiguity_using_Latent_Semantic_Analysis_in_a_small_corpus_of_tex)
+- Book. Building Progressive Web Apps: Bringing the Power of Native to the Browser
+
+
 2019-08-05 JavaScript to generate dream interpretation SQLite DB
 ================================================================
 

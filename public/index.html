@@ -11,6 +11,13 @@
 
   <script src="/js/app.js"></script>
 
+  <!-- see https://socket.io/docs/client-api/-->
+  <script src="/socket.io/socket.io.js"></script>
+  <!--script src="/node_modules/socket.io-client/dist/socket.io.js"></script-->
+  <script>
+    var socket = io('http://localhost:3000');
+   </script>
+
   <title>Oneiromancer</title>
 </head>
 <body>
@@ -33,6 +40,16 @@
     <option value="3">Three</option>
   </select>
 </div-->
+
+<div class="container">
+  <div>
+    <!--ul id="messages"></ul-->
+    <form action="">
+      <input id="m" autocomplete="off" />
+      <button>Send</button>
+    </form>
+  </div>
+</div>
 
 <div class="container">
   <div>

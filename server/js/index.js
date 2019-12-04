@@ -1,6 +1,8 @@
 const express = require("express");
-const app = express()
-const port = 3000
+const app     = express()
+const port    = 3000
+const http    = require('http').createServer(app);
+const io      = require('socket.io')(http);
 
 // Define routes
 app.use(express.static("public"));
@@ -11,8 +13,12 @@ app.use(express.static("public"));
 //});
 
 // Start the server
-app.listen(port, /*hostname,*/ function() {
+/*XXX not app*/http.listen(port, /*hostname,*/ function() {
   console.log(`Listening on port ${port}`);
+});
+
+io.on('connection', function(socket) {
+  console.log('a user connected');
 });
 
 var dream_db = require('./dream_interp_db.js')

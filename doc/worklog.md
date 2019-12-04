@@ -1,3 +1,15 @@
+2019-11-04 npm update
+=====================
+
+On Windows machine:
+
+```terminal
+$ npm update
++ socket.io-client@2.3.0
++ socket.io@2.3.0
+added 47 packages from 28 contributors and audited 411 packages in 2.763s
+```
+
 2019-11-03 looking at simple chat app with socket.io <https://socket.io/get-started/chat>
 =========================================================================================
 

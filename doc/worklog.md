@@ -1,3 +1,20 @@
+2019-11-04 current plan
+=======================
+
+1. Use only Node.js packages.
+2. Web UI is a dialog between user and oneiromancer bot.
+3. Use [NLP.js](https://github.com/axa-group/nlp.js) to chat with a user.
+   Each part of the dream is _question_ in the dialog, an _answer_ is the interpretation.
+4. NLP.js `addDocument` has structure `{key,val}` where key is a phrase (ex. broken tooth)
+   and val is _intent_ string. That allows simple design of the data: phrase of what user
+   has seen in the dream and its meaning (NLP.js intent).
+   NLP.js `addAnswer(intent:string, interpretation:string)` naturally allows quick
+   interpretation.
+   Thus, NLP.js will classify phrases in the user input using the metrics of how
+   a phrase is close to one in the DB; it gives as a list of meanings/interpretaions.
+5. At the end of the conversation, use [RosaeNLG](https://rosaenlg.org) to provide
+   the complete interpretation of the dream.
+
 2019-11-04 npm update
 =====================
 

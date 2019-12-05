@@ -14,13 +14,31 @@ app.use(express.static("public"));
 
 // Start the server
 /*XXX not app*/http.listen(port, /*hostname,*/ function() {
-  console.log(`Listening on port ${port}`);
+    console.log(`Listening on port ${port}`);
 });
 
-io.on('connection', function(socket) {
-  console.log('a user connected');
+io.on('connection', (client) => {
+    console.log('a user connected');
+
+    client.on('username', (username) => {
+        client.username = username;
+        //io.emit('is_online', '🔵 <i>' + client.username + ' join the chat..</i>');
+    });
+
+    client.on('disconnect', () => {
+        console.log('user ' + client.username +' disconnected');
+        //io.emit('is_online', '🔴 <i>' + client.username + ' left the chat..</i>');
+    });
+
+    client.on('chat message', (msg) => {
+        console.log('message: ' + msg);
+        io.emit('chat message', msg);
+        io.emit('chat message', 'reply bla bla');
+    });
 });
 
+
+/*
 var dream_db = require('./dream_interp_db.js')
 
 app.get("/api/atoms", (req, res, next) => {
@@ -69,3 +87,4 @@ app.get("/api/find_atoms/:name", (req, res, next) => {
         })
       });
 });
+*/

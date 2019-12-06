@@ -1,0 +1,19 @@
+{
+    "source": {
+        "includePattern": ".+\\.js(doc|x)?$",
+        "include": ["./tools"],
+        "exclude": ["node_modules"]
+    },
+
+    "recurseDepth": 10,
+
+    "opts": {
+        "destination": "./gen_docs/",
+        "recurse": true
+    },
+
+    "plugins": ["plugins/markdown"],
+    "markdown": {
+        "excludeTags": []
+    }
+}

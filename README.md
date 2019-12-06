@@ -1,2 +1,3 @@
-# oneiromancer
+# Project Oneiromancer
+
 oneiromancy with AI

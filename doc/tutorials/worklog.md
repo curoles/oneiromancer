@@ -1,3 +1,31 @@
+2019-11-05 generate docs with JSDoc
+===================================
+
+```terminal
+$ npm run generate-docs
+
+> oneiromancer@1.0.0 generate-docs C:\Users\ilesik\prj\oneiromancer\oneiromancer
+> jsdoc -c doc/jsdoc_conf.json -u doc/tutorials
+```
+
+See https://ricostacruz.com/til/typescript-jsdoc.
+
+```terminal
+$ npm install typescript --save-dev
+```
+
+Links about JSDoc:
+
+- https://jsdoc.app/
+- https://jsdoc.app/about-tutorials.html
+- https://ricostacruz.com/til/typescript-jsdoc
+- https://typedoc.org/
+- https://blog.cloudflare.com/generating-documentation-for-typescript-projects/
+- https://www.vojtechruzicka.com/documenting-angular-apps-with-typedoc-compodoc-and-angulardoc/
+
+TODO: think about using Typescript
+[Typescript with NodeJS: An Integration Guide](https://medium.com/@rossbulat/typescript-introduction-with-nodejs-c160c4362746)
+
 2019-11-04 current plan
 =======================
 

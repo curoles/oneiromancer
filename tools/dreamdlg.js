@@ -2,7 +2,7 @@
 
 // @ts-check
 /**
- * @file file is ...
+ * @file CLI dialog with Oneiromancer
  * @author Igor Lesik 2019
  * @copyright Igor Lesik 2019
  * 

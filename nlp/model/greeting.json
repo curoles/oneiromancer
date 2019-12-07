@@ -1,0 +1,30 @@
+{
+    "intent": [
+        {
+            "name": "greeting.hello",
+            "lang": {
+                "en":{
+                    "q":["Hello"],
+                    "a":["Hey there!"]
+                },
+                "ru":{
+                    "q": ["Здравствуй", "Привет"],
+                    "a": ["Привет!", "Здравствуй!"]
+                }
+            }
+        },
+        {
+            "name": "greeting.bye",
+            "lang": {
+                "en":{
+                    "q":["I have to go"],
+                    "a":["Till next time"]
+                },
+                "ru":{
+                    "q": ["До свидания"],
+                    "a": ["До свидания"]
+                }
+            }
+        }
+    ]
+}

@@ -23,11 +23,15 @@
   "dependencies": {
     "commander": "^4.0.1",
     "express": "^4.17.1",
+    "node-nlp": "^4.0.0-rc.4",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
-    "sqlite3": "^4.1.0"
+    "sqlite3": "^4.1.1",
+    "string-natural-compare": "^3.0.0"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.29",
+    "@types/node": "^12.12.14",
     "commander": "^4.0.1",
     "inquirer": "^7.0.0",
     "jsdoc": "^3.6.3",

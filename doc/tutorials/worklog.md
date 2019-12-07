@@ -1,3 +1,14 @@
+
+2019-11-05 maybe it is possible to use only SQLite at the beginning
+===================================================================
+
+- type TEXT stores text strings. It also supports different encoding like UTF-8, UTF-16 BE, or UTF-26LE.
+- https://www.sqlite.org/faq.html, What is the maximum size of a VARCHAR in SQLite?
+  SQLite does not enforce the length of a VARCHAR. You can declare a VARCHAR(10) and SQLite will be happy
+  to store a 500-million character string there. And it will keep all 500-million characters intact.
+  Your content is never truncated. SQLite understands the column type of "VARCHAR(N)" to be the same as "TEXT",
+  regardless of the value of N.
+
 2019-11-05 generate docs with JSDoc
 ===================================
 

@@ -1,0 +1,18 @@
+{
+    "intent": [
+        {
+            "name": "prophecy.trouble",
+            "lang": {
+                "en":{
+                    "q":["go under water", "sink in water", "drown"],
+                    "a":["difficulties"]
+                },
+                "ru":{
+                    "q": ["тонуть"],
+                    "a": ["затруднения"]
+                }
+            }
+        }
+
+    ]
+}

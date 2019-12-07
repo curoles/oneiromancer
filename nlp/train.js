@@ -16,10 +16,12 @@ const { NlpManager } = require('node-nlp');
 const manager = new NlpManager({ languages: ['en', 'ru'] });
 
 
-function readAllJsonInputFiles()
+function readAllJsonInputFiles(pathToModel)
 {
-
-    readJsonInputFileSync('./nlp/model/greeting.json');
+    let models = ['greeting','prophecy/water'];
+    for (const model of models) {
+        readJsonInputFileSync(pathToModel+'/'+model+'.json');
+    }
 }
 
 function readJsonInputFileSync(filename)
@@ -57,9 +59,12 @@ function processJsonInputData(jsonData)
     }
 }
 
-readAllJsonInputFiles();
+readAllJsonInputFiles('./nlp/model');
 
-manager.train()
-  .then(result => manager.process('en', 'Hello'))
-  //.then(result => manager.process('en', 'I have to go'))
-  .then(result => console.log(result.answer));
+console.log('start training ...');
+
+(async () => {
+    await manager.train();
+    await console.log('saving ./build/model.nlp ...');
+    await manager.save('./build/model.nlp');
+})();

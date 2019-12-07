@@ -6,10 +6,13 @@
  * @author Igor Lesik 2019
  * @copyright Igor Lesik 2019
  * 
- * @see
- * https://jsdoc.app/#block-tags
- * https://scotch.io/tutorials/build-an-interactive-command-line-application-with-nodejs
  */
+
+const { NlpManager } = require('node-nlp');
+const nlp = new NlpManager();
+
+console.log("loading NLP model ...");
+nlp.load('./build/model.nlp');
 
 const program = require('commander');
 
@@ -33,8 +36,6 @@ program
 
 program.parse(process.argv);
 
-// http://sudheerjonna.com/blog/2017/10/22/interactive-command-line-interface-using-inquirerjs/
-/** @see http://janabeck.com/blog/2017/02/05/infinite-interactivity-with-Inquirer */
 const inquirer = require('inquirer');
 const Rx = require('rxjs');
 
@@ -43,23 +44,22 @@ const prompts = new Rx.Subject();
 /**
  * Make `inquirer` prompt structure.
  *
- * @param {string} msg File identifier.
+ * @param {string} msg message string.
  * @returns {any} prompt object.
  */
 function makePrompt(msg) {
     return {
         type: 'input',            // Type of the prompt.
-        name: `userInput-${i}`,   // The name to use when storing the answer in the answers hash.
+        name: `user`,   // The name to use when storing the answer in the answers hash.
         message: `${msg || 'Say something to start chatting!'}\n\n`, // The question to print.
     };
 }
 
-let i = 0;
-
-function onEachAnswer({ answer }) {
+function onEachQuestion({ answer }) {
     if (answer !== '') {
-        i += 1;
-        prompts.next(makePrompt(`This is prompt #${i}.`));
+        nlp.process(answer)
+            .then(response => prompts.next(makePrompt(`${response['answer']}`)));
+            //.then(response => console.log(response/*['answer']*/));
     } else {
         prompts.complete();
     }
@@ -74,7 +74,7 @@ function onCompleted() {
 }
 
 inquirer.prompt(prompts).ui.process.subscribe(
-   onEachAnswer,
+   onEachQuestion,
    onError,
    onCompleted,
 );

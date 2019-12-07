@@ -4,8 +4,8 @@
             "name": "greeting.hello",
             "lang": {
                 "en":{
-                    "q":["Hello"],
-                    "a":["Hey there!"]
+                    "q":["Hello", "hi", "howdy"],
+                    "a":["Hey there!", "Greetings!"]
                 },
                 "ru":{
                     "q": ["Здравствуй", "Привет"],
@@ -17,8 +17,9 @@
             "name": "greeting.bye",
             "lang": {
                 "en":{
-                    "q":["I have to go"],
-                    "a":["Till next time"]
+                    "q":["I have to go", "i must go", "goodbye for now",
+                        "bye bye take care", "okay see you later", "bye for now"],
+                    "a":["Till next time", "see you soon!"]
                 },
                 "ru":{
                     "q": ["До свидания"],

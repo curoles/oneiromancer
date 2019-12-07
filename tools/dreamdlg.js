@@ -81,5 +81,6 @@ inquirer.prompt(prompts).ui.process.subscribe(
 
 // kick off the chat with a simple call to prompts.onNext
 prompts.next(
-    makePrompt(`Hello! I will be delighted to hear about your dream 😀`)
+    makePrompt(`Hello! I will be delighted to hear about your dream 😀`+
+        '\nType "help", if you need instructions.')
 );

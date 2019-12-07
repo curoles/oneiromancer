@@ -26,6 +26,33 @@
                     "a": ["До свидания"]
                 }
             }
+        },
+        {
+            "name": "greeting.whoareyou",
+            "lang": {
+                "en":{
+                    "q":["who are you", "what are you"],
+                    "a":["they call me Oneiromancer", "I am just a computer program"]
+                },
+                "ru":{
+                    "q": ["кто ты такой", "кто ты", "что ты такое"],
+                    "a": ["меня зовут Толкователь снов", "я являюсь компьютерной программой"]
+                }
+            }
+        },
+        {
+            "name": "greeting.howareyou",
+            "lang": {
+                "en":{
+                    "q":["how are you", "how do you do", "how are you doing",
+                         "how is it going", "what's up"],
+                    "a":["I am doing well", "I am just fine", "everything is fine"]
+                },
+                "ru":{
+                    "q": ["как дела"],
+                    "a": ["у меня всё хорошо", "у меня всё в порядке"]
+                }
+            }
         }
     ]
 }

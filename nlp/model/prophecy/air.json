@@ -1,0 +1,30 @@
+{
+    "intent": [
+        {
+            "name": "prophecy.suspense",
+            "lang": {
+                "en":{
+                    "q": ["fog"],
+                    "a": ["suspense"]
+                },
+                "ru":{
+                    "q": ["туман"],
+                    "a": ["неизвестность", "колебания в нерешительности"]
+                }
+            }
+        },
+        {
+            "name": "prophecy.difficulty",
+            "lang": {
+                "en":{
+                    "q": ["void"],
+                    "a": ["difficulties"]
+                },
+                "ru":{
+                    "q": ["бездна"],
+                    "a": ["трудности"]
+                }
+            }
+        }
+    ]
+}

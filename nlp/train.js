@@ -18,7 +18,7 @@ const manager = new NlpManager({ languages: ['en', 'ru'] });
 
 function readAllJsonInputFiles(pathToModel)
 {
-    let models = ['greeting','prophecy/water'];
+    let models = ['interface', 'greeting','prophecy/water', 'prophecy/air'];
     for (const model of models) {
         readJsonInputFileSync(pathToModel+'/'+model+'.json');
     }

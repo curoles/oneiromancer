@@ -1,0 +1,17 @@
+{
+    "intent": [
+        {
+            "name": "interface.help",
+            "lang": {
+                "en":{
+                    "q":["help", "help me", "I need help"],
+                    "a":["to do help"]
+                },
+                "ru":{
+                    "q": ["помощь", "нужна помощь"],
+                    "a": ["to do help in ru"]
+                }
+            }
+        }
+    ]
+}

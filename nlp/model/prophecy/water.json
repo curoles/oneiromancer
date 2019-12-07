@@ -1,7 +1,7 @@
 {
     "intent": [
         {
-            "name": "prophecy.trouble",
+            "name": "prophecy.difficulty",
             "lang": {
                 "en":{
                     "q":["go under water", "sink in water", "drown"],

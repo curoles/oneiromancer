@@ -66,7 +66,8 @@ function onError(err) {
 }
 
 function onCompleted() {
-    console.log('Interactive session is complete. Good bye! 🙂\n');
+    console.log(conversation.makeProphecy());
+    console.log('\nInteractive session is complete. Good bye! 🙂\n');
 }
 
 inquirer.prompt(prompts).ui.process.subscribe(
@@ -77,6 +78,7 @@ inquirer.prompt(prompts).ui.process.subscribe(
 
 // kick off the chat with a simple call to prompts.onNext
 prompts.next(
-    makePrompt(`Hello! I will be delighted to hear about your dream 😀`+
-        '\nType "help", if you need instructions.')
+    makePrompt(`Hello! I will be delighted 😀 to hear about your dream.\n`+
+        'You can tell me your dream by entering short sentences or by entering a long essay at once.\n'+
+        'Press [↵ Enter] twice to end this session.')
 );

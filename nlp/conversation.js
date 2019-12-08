@@ -61,6 +61,14 @@ function Conversation() {
 
         return accum;
     }
+
+    /**
+     * Combine all previously provided inputs and compile a prophecy.
+     */
+    this.makeProphecy = function makeProphecy() {
+
+        return 'prophecy...';
+    }
 }
 
 module.exports = {

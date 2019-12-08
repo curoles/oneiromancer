@@ -5,11 +5,24 @@
             "lang": {
                 "en":{
                     "q":["help", "help me", "I need help"],
-                    "a":["to do help"]
+                    "a":["Just tell what you saw in your dream. You can use short \"key\" phrase or type a long essay. Oneiromancer will response to you with a short phrase about the meaning.\n\nAt the end, after the conversation, type \"prophecy\" to perform final divination."]
                 },
                 "ru":{
                     "q": ["помощь", "нужна помощь"],
                     "a": ["to do help in ru"]
+                }
+            }
+        },
+        {
+            "name": "interface.prophecy",
+            "lang": {
+                "en":{
+                    "q":["prophecy", "prophesy", "foresee", "divination"],
+                    "a":["need action..."]
+                },
+                "ru":{
+                    "q": ["толкуй", "толкуй сон", "толкование"],
+                    "a": ["to do in ru"]
                 }
             }
         }

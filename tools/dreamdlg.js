@@ -8,12 +8,6 @@
  * 
  */
 
-const { NlpManager } = require('node-nlp');
-const nlp = new NlpManager();
-
-console.log("loading NLP model ...");
-nlp.load('./build/model.nlp');
-
 const program = require('commander');
 
 program
@@ -36,6 +30,9 @@ program
 
 program.parse(process.argv);
 
+const converse = require('../nlp/conversation');
+const conversation = new converse.Conversation();
+
 const inquirer = require('inquirer');
 const Rx = require('rxjs');
 
@@ -57,8 +54,12 @@ function makePrompt(msg) {
 
 function onEachQuestion({ answer }) {
     if (answer !== '') {
-        nlp.process(answer)
-            .then(response => prompts.next(makePrompt(`${response['answer']}`)));
+        conversation.makeResponse(
+            answer,
+            (rsp)=>{prompts.next(makePrompt(rsp));}
+        );
+        //nlp.process(answer)
+            //.then(response => prompts.next(makePrompt(`${response['answer']}`)));
             //.then(response => console.log(response/*['answer']*/));
     } else {
         prompts.complete();

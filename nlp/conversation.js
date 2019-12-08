@@ -7,6 +7,8 @@
  */
 'use strict';
 
+const {split} = require('sentence-splitter');
+
 const uniqid = require('uniqid');
 
 const { NlpManager } = require('node-nlp');
@@ -35,14 +37,29 @@ function Conversation() {
      * Analyze input phrase and generate a response.
      * @param {string} question 
      */
-    this.makeResponse = function makeResponse(question, cb) {
+    this.makeResponse = async function makeResponse(question) {
         //console.log('processing phrase: '+question);
-        this.nlp.process(question)
-        .then(response => {
+        let accum = '';
+
+        let responsePromises = [];
+        let sentences = split(question);
+        for (let sentence of sentences) {
+            if (sentence['type'] != 'Sentence') continue;
+            let partOfQuestion = sentence['raw'];
+
+            responsePromises.push(this.nlp.process(partOfQuestion));
+        }
+
+        let responses = await Promise.all(responsePromises);
+
+        for (let response of responses) {
             let answer = response['answer'];
             //console.log('answer: '+answer);
-            cb(answer);
-        });
+            accum +=  answer + ' / ';
+        }
+        if (responses.length > 0) {accum = accum.slice(0, -3);}//FIXME
+
+        return accum;
     }
 }
 

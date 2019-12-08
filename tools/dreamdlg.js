@@ -54,13 +54,8 @@ function makePrompt(msg) {
 
 function onEachQuestion({ answer }) {
     if (answer !== '') {
-        conversation.makeResponse(
-            answer,
-            (rsp)=>{prompts.next(makePrompt(rsp));}
-        );
-        //nlp.process(answer)
-            //.then(response => prompts.next(makePrompt(`${response['answer']}`)));
-            //.then(response => console.log(response/*['answer']*/));
+        conversation.makeResponse(answer)
+            .then((response) => prompts.next(makePrompt(response)));
     } else {
         prompts.complete();
     }

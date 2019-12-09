@@ -1,4 +1,14 @@
 
+2019-11-08 JavaScript new ES6 features
+======================================
+
+- https://exploringjs.com/es6/ch_overviews.html
+- http://es6-features.org
+- Good online book, https://exploringjs.com/es6/index.html
+- https://www.w3schools.com/js/js_classes.asp
+- https://www.w3schools.com/js/js_mistakes.asp
+- https://www.w3schools.com/js/default.asp
+
 2019-11-05 maybe it is possible to use only SQLite at the beginning
 ===================================================================
 

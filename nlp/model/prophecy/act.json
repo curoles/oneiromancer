@@ -1,0 +1,43 @@
+{
+    "intent": [
+        {
+            "name": "prophecy.intrigue",
+            "lang": {
+                "en":{
+                    "q": ["pack", "packing"],
+                    "a": ["intrigue against you"]
+                },
+                "ru":{
+                    "q": ["упаковывать"],
+                    "a": ["заговор против тебя"]
+                }
+            }
+        },
+        {
+            "name": "prophecy.trouble",
+            "lang": {
+                "en":{
+                    "q": ["be late"],
+                    "a": ["trouble"]
+                },
+                "ru":{
+                    "q": ["опоздать", "опаздывать"],
+                    "a": ["проблемы"]
+                }
+            }
+        },
+        {
+            "name": "prophecy.fear_to_lose",
+            "lang": {
+                "en":{
+                    "q": ["be late for travel", "be late for transport", "miss train"],
+                    "a": ["fear to lose something important"]
+                },
+                "ru":{
+                    "q": ["опоздать на транспорт"],
+                    "a": ["боязнь упустить что-то ценное для вас"]
+                }
+            }
+        }
+    ]
+}

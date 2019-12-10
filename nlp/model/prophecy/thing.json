@@ -1,0 +1,17 @@
+{
+    "intent": [
+        {
+            "name": "prophecy.difficulty",
+            "lang": {
+                "en":{
+                    "q": ["luggage", "baggage"],
+                    "a": ["difficulty"]
+                },
+                "ru":{
+                    "q": ["багаж"],
+                    "a": ["затруднения"]
+                }
+            }
+        }
+    ]
+}

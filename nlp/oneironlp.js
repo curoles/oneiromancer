@@ -83,9 +83,23 @@ class OneiroNlpManager
 
     /*async*/ process(question) {
         const promiseNlp = this.nlp.process(question);
-        //TODO this.bayesClassifier.classify(question);
+        //console.log('bayes: ' + this.bayesClassifier.classify(question));
         //let allPromises = Promise.all(promiseNlp);
         return promiseNlp; //allPromises;
+    }
+
+    /**
+     * 
+     * @param {Object.<string, string>} language 
+     * @param {string} userInput 
+     * @param {Object[]} responses 
+     */
+    prophesy(language, userInput, responses) {
+        let prophecyText = '';
+        for (const response of responses) {
+            prophecyText += response.answer;
+        }
+        return prophecyText;
     }
 }
 

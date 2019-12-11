@@ -54,6 +54,7 @@ function Conversation() {
     this.nlp = new OneiroNlpManager();
     this.language = undefined;
     this.userInput = '';
+    this.responses = [];
 
     /** constructor */
     (() => {
@@ -101,6 +102,7 @@ function Conversation() {
             let answer = response['answer'];
             //console.log('answer: '+answer);
             accum +=  answer + ' / ';
+            this.responses.push(response);
         }
         if (responses.length > 0) {accum = accum.slice(0, -3);}//FIXME
 
@@ -111,8 +113,9 @@ function Conversation() {
      * Combine all previously provided inputs and compile a prophecy.
      */
     this.makeProphecy = function makeProphecy() {
-
-        return 'prophecy...';
+        const prophecyText = this.nlp.prophesy(
+            this.language, this.userInput, this.responses);
+        return prophecyText;
     }
 }
 

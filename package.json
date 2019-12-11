@@ -22,6 +22,7 @@
   "homepage": "https://github.com/curoles/oneiromancer#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "natural": "^0.6.3",
     "node-nlp": "^4.0.0-rc.4",
     "sentence-splitter": "^3.2.0",
     "socket.io": "^2.3.0",

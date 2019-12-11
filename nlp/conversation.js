@@ -11,8 +11,9 @@ const {split} = require('sentence-splitter');
 
 const uniqid = require('uniqid');
 
-const { NlpManager, Language } = require('node-nlp');
+const { /*NlpManager,*/ Language } = require('node-nlp');
 const languageNlp = new Language();
+const { OneiroNlpManager } = require('./oneironlp');
 
 //Let's load a model per Conversation instead of one for all.
 //const nlp = new NlpManager();
@@ -50,14 +51,14 @@ function splitSentence(lang, sentence) {
 
 function Conversation() {
     this.sessionId = createUniqueSessionId();
-    this.nlp = new NlpManager();
+    this.nlp = new OneiroNlpManager();
     this.language = undefined;
     this.userInput = '';
 
     /** constructor */
     (() => {
         //console.log("loading NLP model ...");
-        this.nlp.load('./build/model.nlp');
+        this.nlp.load(/*'./build/model.nlp'*/);
         //console.log(`created new conversation with ID:${this.sessionId}`);
     })();
 

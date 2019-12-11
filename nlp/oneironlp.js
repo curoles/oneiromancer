@@ -19,7 +19,12 @@ class OneiroNlpManager
     constructor() {
         this.nlpTrainedModelPath = './build/model.nlp';
         this.bayesTrainedModelPath = './build/bayesModel.json';
-        this.nlp = new NlpManager({ languages: ['en', 'ru'] });
+        this.nlp = new NlpManager({
+            languages: ['en', 'ru'],
+            nlu: { log: true },
+            autoLoad: false, autoSave: false,
+            modelFileName: this.nlpTrainedModelPath
+        });
 
         //const PorterStemmerRu = require('./node_modules/natural/lib/natural/stemmers/porter_stemmer_ru');
         this.bayesClassifier = new natural.BayesClassifier(/*PorterStemmerXx*/);
@@ -33,7 +38,7 @@ class OneiroNlpManager
         this.nlp.save(this.nlpTrainedModelPath);
 
         this.bayesClassifier.save(this.bayesTrainedModelPath, (err, classifier) => {
-            // the classifier is saved to the classifier.json file!
+            console.log(`Bayes classifier saved to ${this.bayesTrainedModelPath}`);
         });
     }
 
@@ -56,7 +61,7 @@ class OneiroNlpManager
      */
     addDocument(lang, question, intent) {
         this.nlp.addDocument(lang, question, intent);
-        this.bayesClassifier.addDocument('question', intent);
+        this.bayesClassifier.addDocument(question, intent);
     }
 
     /**
@@ -76,11 +81,11 @@ class OneiroNlpManager
         return allPromises;
     }
 
-    async process(question) {
+    /*async*/ process(question) {
         const promiseNlp = this.nlp.process(question);
         //TODO this.bayesClassifier.classify(question);
-        let allPromises = Promise.all(promiseNlp);
-        return allPromises;
+        //let allPromises = Promise.all(promiseNlp);
+        return promiseNlp; //allPromises;
     }
 }
 
